@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="portfólio de Júlio César Neves" />
-    <meta name="color-scheme" content="light dark" />
-    <link rel="shortcut icon" href="files/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="files/bundle.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Unica+One&display=swap"
-      rel="stylesheet"
-    />
-    <title>Júlio César Neves | Portfólio</title>
-  </head>
-  <body>
+---
+import '../global.css';
+
+import imageMobileAventura from "./../assets/images/aventura_mobile.png";
+import imageAventura from "./../assets/images/aventura.png";
+import imageMobileSunnyside from "./../assets/images/sunnyside_mobile.png";
+import imageSunnyside from "./../assets/images/sunnyside.png";
+import imageMobileLoopstudios from "./../assets/images/loopstudios_mobile.png";
+import imageLoopstudios from "./../assets/images/loopstudios.png";
+import imageResultsSummary from "./../assets/images/results.png";
+import imageTimeTracker from "./../assets/images/tracker.png";
+import imageComments from "./../assets/images/comments.png";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout pageTitle="César Neves | Portfólio" description="Portfólio de César Neves">
     <section id="header" class="header">
       <div class="header-mosaic">
-        <h1 class="header-brand">Júlio Neves</h1>
+        <h1 class="header-brand">César Neves</h1>
         <div id="rectangle-1" class="header-rectangle"></div>
         <div id="rectangle-2" class="header-rectangle"></div>
         <div id="rectangle-3" class="header-rectangle"></div>
@@ -28,7 +26,7 @@
     </section>
     <section id="navbar" class="navbar">
       <div class="navbar-nav">
-        <div class="nav-links md-navigation-closed" onclick="toggleNavbar()">
+        <div id="navbar-toggler" class="nav-links md-navigation-closed">
           <div class="nav-link nav-link-active">
             <a href="#" class="main-link">Home</a>
           </div>
@@ -60,9 +58,8 @@
             </svg>
           </div>
           <div
-            id="nav-option-theme"
+            id="nav-toggle-theme"
             class="nav-option"
-            onclick="toggleLights()"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +79,7 @@
     <section id="about" class="about content-section full-screen-section">
       <h2 class="section-header">Sobre</h2>
       <p class="section-text">
-        Eu sou o Júlio César, tudo bem? <br /><br />
+        Eu sou o César, tudo bem? <br /><br />
         Possuo experiência no desenvolvimento de aplicações web eficientes
         utilizando Node.js, Python e Angular. <br /><br />
         Sempre prezando pelas boas práticas de programação e entregas de valor,
@@ -102,15 +99,14 @@
         <div
           id="gallery-item-1"
           class="gallery-item gallery-spotlight"
-          onclick="toggleSpotlight(1)"
         >
           <picture data-title="Aventura">
             <source
-              srcset="./files/images/aventura_mobile.png"
+              srcset={imageMobileAventura.src}
               media="(max-width: 720px)"
             />
             <img
-              src="./files/images/aventura.png"
+              src={imageAventura.src}
               alt="Aventura"
               loading="lazy"
             />
@@ -129,15 +125,14 @@
         <div
           id="gallery-item-2"
           class="gallery-item"
-          onclick="toggleSpotlight(2)"
         >
           <picture>
             <source
-              srcset="./files/images/sunnyside_mobile.png"
+              srcset={imageMobileSunnyside.src}
               media="(max-width: 720px)"
             />
             <img
-              src="./files/images/sunnyside.png"
+              src={imageSunnyside.src}
               alt="Sunnyside"
               loading="lazy"
             />
@@ -156,15 +151,14 @@
         <div
           id="gallery-item-3"
           class="gallery-item"
-          onclick="toggleSpotlight(3)"
         >
           <picture>
             <source
-              srcset="./files/images/loopstudios_mobile.png"
+              srcset={imageMobileLoopstudios.src}
               media="(max-width: 720px)"
             />
             <img
-              src="./files/images/loopstudios.png"
+              src={imageLoopstudios.src}
               alt="Loopstudios"
               loading="lazy"
             />
@@ -183,7 +177,6 @@
         <div
           id="gallery-item-4"
           class="gallery-item"
-          onclick="toggleSpotlight(4)"
         >
           <picture>
             <!-- this source avoid images from loading on small screens. It is a blank svg-->
@@ -194,7 +187,7 @@
               media="(max-width: 720px)"
             />
             <img
-              src="./files/images/results.png"
+              src={imageResultsSummary.src}
               alt="Results"
               loading="lazy"
             />
@@ -213,7 +206,6 @@
         <div
           id="gallery-item-5"
           class="gallery-item"
-          onclick="toggleSpotlight(5)"
         >
           <picture>
             <source
@@ -223,7 +215,7 @@
               media="(max-width: 720px)"
             />
             <img
-              src="./files/images/comments.png"
+              src={imageComments.src}
               alt="Interactive Comments"
               loading="lazy"
             />
@@ -242,7 +234,6 @@
         <div
           id="gallery-item-6"
           class="gallery-item"
-          onclick="toggleSpotlight(6)"
         >
           <picture>
             <source
@@ -252,7 +243,7 @@
               media="(max-width: 720px)"
             />
             <img
-              src="./files/images/tracker.png"
+              src={imageTimeTracker.src}
               alt="Time Tracker"
               loading="lazy"
             />
@@ -338,13 +329,13 @@
             >
           </div>
         </div>
-        <div class="footer-attribution">&copy; Júlio César Neves - 2024</div>
+        <div class="footer-attribution">&copy; Júlio César Neves - 2025</div>
       </div>
     </section>
-    <script src="files/bundle.js" async></script>
+
     <!-- Google Recaptcha -->
     <script defer src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
+    <script is:inline>
       function onSubmit() {
         document.getElementById("contact-form").submit();
       }
@@ -354,18 +345,57 @@
       };
     </script>
     <!-- Google tag (gtag.js) -->
-    <script
+    <script is:inline
       defer
       src="https://www.googletagmanager.com/gtag/js?id=G-PRXCQYLTVK"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
+      function gtag(...args: any[]) {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-PRXCQYLTVK");
     </script>
-  </body>
-</html>
+
+		<script>
+
+		</script>
+
+		<script>
+			function toggleNavbar() {
+				const navbar = document.querySelector(".nav-links")!;
+
+				navbar.classList.toggle("md-navigation-closed");
+			}
+				
+			function toggleLights() {
+				const root = document.querySelector("html")!;
+
+				if (root.dataset.theme === "light") {
+					root.dataset.theme = "dark";
+				} else if (root.dataset.theme === "dark") {
+					root.dataset.theme = "light";
+				}
+			}
+
+			function toggleSpotlight(galleryIndex: number) {
+				const gallery = document.getElementById("portfolio-gallery")!;
+
+				gallery
+					.querySelectorAll(".gallery-item")
+					.forEach((item) => item.classList.remove("gallery-spotlight"));
+
+				gallery.children.item(galleryIndex - 1)?.classList.add("gallery-spotlight");
+			}
+
+			document.querySelector("#navbar-toggler")?.addEventListener('click', toggleNavbar)
+			document.querySelector("#nav-toggle-theme")?.addEventListener('click', toggleLights)
+			document.querySelectorAll(".gallery-item").forEach(
+				(item, index) => item.addEventListener('click', () => toggleSpotlight(index+1))
+			)
+		</script>
+</Layout>
+
+
