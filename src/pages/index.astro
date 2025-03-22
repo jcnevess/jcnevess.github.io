@@ -3,12 +3,12 @@ import '../global.css';
 
 import imageMobileAventura from "./../assets/images/aventura_mobile.png";
 import imageAventura from "./../assets/images/aventura.png";
-import imageMobileSunnyside from "./../assets/images/sunnyside_mobile.png";
 import imageSunnyside from "./../assets/images/sunnyside.png";
 import imageMobileLoopstudios from "./../assets/images/loopstudios_mobile.png";
 import imageLoopstudios from "./../assets/images/loopstudios.png";
-import imageResultsSummary from "./../assets/images/results.png";
 import imageTimeTracker from "./../assets/images/tracker.png";
+import imageHangman from "./../assets/images/hangman.png";
+import imageMobileHangman from "./../assets/images/hangman_mobile.png";
 import imageComments from "./../assets/images/comments.png";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -100,6 +100,32 @@ import Layout from "../layouts/Layout.astro";
           id="gallery-item-1"
           class="gallery-item gallery-spotlight"
         >
+          <picture data-title="Hangman Game">
+            <source
+              srcset={imageMobileHangman.src}
+              media="(max-width: 720px)"
+            />
+            <img
+              src={imageHangman.src}
+              alt="Hangman Game"
+              loading="lazy"
+            />
+          </picture>
+          <div class="gallery-item-snippet">
+            <a
+              href="https://jcnevess.github.io/hangmangame"
+              target="_blank"
+              class="gallery-item-link"
+            >
+              <h3 class="gallery-item-title">Hangman Game</h3>
+              <span class="gallery-item-subtitle">Visitar site</span>
+            </a>
+          </div>
+        </div>
+        <div
+          id="gallery-item-2"
+          class="gallery-item"
+        >
           <picture data-title="Aventura">
             <source
               srcset={imageMobileAventura.src}
@@ -118,32 +144,6 @@ import Layout from "../layouts/Layout.astro";
               class="gallery-item-link"
             >
               <h3 class="gallery-item-title">Aventura</h3>
-              <span class="gallery-item-subtitle">Visitar site</span>
-            </a>
-          </div>
-        </div>
-        <div
-          id="gallery-item-2"
-          class="gallery-item"
-        >
-          <picture>
-            <source
-              srcset={imageMobileSunnyside.src}
-              media="(max-width: 720px)"
-            />
-            <img
-              src={imageSunnyside.src}
-              alt="Sunnyside"
-              loading="lazy"
-            />
-          </picture>
-          <div class="gallery-item-snippet">
-            <a
-              href="https://jcnevess.github.io/sunnyside-agency/"
-              target="_blank"
-              class="gallery-item-link"
-            >
-              <h3 class="gallery-item-title">Sunnyside</h3>
               <span class="gallery-item-subtitle">Visitar site</span>
             </a>
           </div>
@@ -187,18 +187,18 @@ import Layout from "../layouts/Layout.astro";
               media="(max-width: 720px)"
             />
             <img
-              src={imageResultsSummary.src}
-              alt="Results"
+              src={imageSunnyside.src}
+              alt="Sunnyside"
               loading="lazy"
             />
           </picture>
           <div class="gallery-item-snippet">
             <a
-              href="https://jcnevess.github.io/results-summary/"
+              href="https://jcnevess.github.io/sunnyside-agency/"
               target="_blank"
               class="gallery-item-link"
             >
-              <h3 class="gallery-item-title">Results page</h3>
+              <h3 class="gallery-item-title">Sunnyside</h3>
               <span class="gallery-item-subtitle">Visitar site</span>
             </a>
           </div>
@@ -266,9 +266,9 @@ import Layout from "../layouts/Layout.astro";
       <ul class="skills-list section-text">
         <li>Javascript / Typescript / Node.js</li>
         <li>Python / Flask</li>
-        <li>Angular</li>
         <li>React</li>
-        <li>HTML e CSS</li>
+        <li>Vue</li>
+        <li>Angular</li>
         <li>Java</li>
         <li>Spring</li>
         <li>Banco de dados (SQL, NoSQL)</li>
